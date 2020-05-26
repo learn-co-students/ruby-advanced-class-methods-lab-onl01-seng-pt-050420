@@ -11,7 +11,7 @@ class Song
   end
 
   def self.create
-    song = Song.new
+    song = self.new
     if !(self.all.include?(song))
       self.all << song
     end
@@ -19,13 +19,13 @@ class Song
   end
 
   def self.new_by_name(name)
-    song = Song.new
+    song = self.new
     song.name = name
     song
   end
 
   def self.create_by_name(name)
-    song = Song.new
+    song = self.new
     song.name = name
     if !(self.all.include?(song))
       self.all << song
@@ -46,7 +46,7 @@ class Song
   end
 
   def self.new_from_filename(name)  
-    song = Song.new
+    song = self.new
     name_parts = name.split(" - ")
     song.artist_name = name_parts[0]
     song.name = name_parts[1].chomp(".mp3")
@@ -54,7 +54,7 @@ class Song
   end 
 
   def self.create_from_filename(name)
-    song = Song.new
+    song = self.new
     name_parts = name.split(" - ")
     song.artist_name = name_parts[0]
     song.name = name_parts[1].chomp(".mp3")
